@@ -62,27 +62,48 @@
     }
     .hero-section {
       min-height: 100vh;
-      background-image: url('./assets/AC/ac3.jpg');
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: cover;
       color: #fff;
       display: flex;
       align-items: center;
       position: relative;
       overflow: hidden;
     }
-    .hero-section::before {
+    /* Background slider styles */
+    .hero-bg-slider {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      overflow: hidden;
+    }
+    .hero-bg-slide {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center center;
+      opacity: 0;
+      transition: opacity 1.2s cubic-bezier(.4,0,.2,1);
+      will-change: opacity;
+    }
+    .hero-bg-slide.active {
+      opacity: 1;
+      z-index: 1;
+      transition: opacity 1.2s cubic-bezier(.4,0,.2,1);
+    }
+    .hero-bg-slider::after {
       content: "";
       position: absolute;
       inset: 0;
-      background: rgba(34,47,62,0.18);
-      z-index: 1;
+      background: linear-gradient(120deg, rgba(39,174,96,0.82) 0%, rgba(20,90,50,0.82) 100%);
+      z-index: 2;
       pointer-events: none;
     }
     .hero-content {
       position: relative;
-      z-index: 2;
+      z-index: 3;
       text-align: center;
       width: 100%;
     }
@@ -213,6 +234,23 @@
       filter: none;
       transform: scale(1.12) rotate(-2deg);
     }
+    .ac-brands {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin: 2rem 0 2.5rem 0;
+    }
+    .ac-brands-title {
+      text-align: center;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.3rem;
+      color: var(--secondary);
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      letter-spacing: 1px;
+    }
     .contact-section {
       background: var(--light);
       padding: 5rem 0;
@@ -261,6 +299,60 @@
       .project-img { height: 120px; }
       .partners-logos img { height: 32px; }
     }
+    /* Add to your <style> section */
+    .ac-brands-section {
+  margin: 2rem 0 2.5rem 0;
+}
+.ac-brands-title {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.3rem;
+  color: var(--secondary);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+}
+.ac-brands-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  min-height: 100px;
+}
+.ac-brand-logo {
+  height: 240px;
+  width: 280px;
+  object-fit: contain;
+  border-radius: 0%;
+  background: #fff;
+  box-shadow: 0 4px 24px rgba(39,174,96,0.13);
+  transition: transform 0.5s, box-shadow 0.5s, border 0.5s, opacity 0.5s;
+  cursor: pointer;
+  opacity: 1;
+  transform: scale(1);
+}
+.ac-brand-logo.hide {
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.85);
+}
+@media (max-width: 768px) {
+  .ac-brand-logo { height: 80px; width: 80px; }
+  .ac-brands-row { gap: 1.3rem; }
+}
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes bounceIn {
+      from { opacity: 0; transform: scale(0.5); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    @keyframes flipInY {
+      from { opacity: 0; transform: rotateY(-90deg); }
+      to { opacity: 1; transform: rotateY(0); }
+    }
   </style>
 </head>
 <body>
@@ -294,6 +386,12 @@
 
   <!-- Hero Section -->
   <section class="hero-section d-flex align-items-center" id="home">
+    <!-- Background slider -->
+    <div class="hero-bg-slider">
+      <div class="hero-bg-slide active" style="background-image:url('./assets/post1/background.png');"></div>
+      <div class="hero-bg-slide" style="background-image:url('./assets/post1/new1.png');"></div>
+      <div class="hero-bg-slide" style="background-image:url('./assets/post1/background.png');"></div>
+    </div>
     <div class="container hero-content">
       <div class="company-name-hero animate__animated animate__fadeInDown">BMS Technologies (PVT) LTD</div>
       <h2 class="animate__animated animate__fadeInUp animate__delay-1s">Industry-Leading AC, CCTV & Technical Solutions</h2>
@@ -303,7 +401,7 @@
       <a href="#contact" class="btn btn-hero shadow-lg animate__animated animate__pulse animate__infinite">Book Service</a>
     </div>
   </section>
-
+  
   <!-- About Section -->
   <section class="py-5 fade-in" id="about">
     <div class="container">
@@ -320,11 +418,24 @@
           </ul>
         </div>
         <div class="col-md-6 text-center">
-          <img src="assets/AC/ac4.jpg" alt="About" class="img-fluid rounded shadow animate__animated animate__zoomIn" style="max-height:300px;">
+          <img src="assets/post1/new1.png" alt="About" class="img-fluid rounded shadow animate__animated animate__zoomIn" style="max-height:300px;">
         </div>
       </div>
     </div>
   </section>
+
+<!-- AC Brands Section (after Hero, before About) -->
+<div class="ac-brands-section">
+  <div class="container">
+    <div class="section-title">We Use Only Trusted AC Brands</div>
+    <div class="ac-brands-row" id="acBrandsRow">
+      <img src="assets/brands/ac1.png" alt="Daikin" title="Daikin" class="ac-brand-logo">
+      <img src="assets/brands/ac2.png" alt="LG" title="LG" class="ac-brand-logo">
+      <img src="assets/brands/ac3.png" alt="Samsung" title="Samsung" class="ac-brand-logo">
+      <img src="assets/brands/ac4.png" alt="Mitsubishi" title="Mitsubishi" class="ac-brand-logo">
+    </div>
+  </div>
+</div>
 
   <!-- Services Section -->
   <section class="py-5 bg-white fade-in" id="services">
@@ -525,20 +636,20 @@
       <h2 class="section-title">Contact Us</h2>
       <div class="row g-5">
         <div class="col-lg-6">
-          <form>
-            <div class="mb-3">
-              <input type="text" class="form-control" placeholder="Your Name" required />
-            </div>
-            <div class="mb-3">
-              <input type="email" class="form-control" placeholder="Email Address" required />
-            </div>
-            <div class="mb-3">
-              <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-success btn-lg">
-              Send Message
-            </button>
-          </form>
+         <form action="https://formspree.io/f/mzzgvlry" method="POST">
+  <div class="mb-3">
+    <input type="text" name="name" class="form-control" placeholder="Your Name" required />
+  </div>
+  <div class="mb-3">
+    <input type="email" name="email" class="form-control" placeholder="Email Address" required />
+  </div>
+  <div class="mb-3">
+    <textarea name="message" class="form-control" rows="5" placeholder="Your Message" required></textarea>
+  </div>
+  <button type="submit" class="btn btn-success btn-lg">
+    Send Message
+  </button>
+</form>
         </div>
         <div class="col-lg-6">
           <div class="map-container">
@@ -625,5 +736,21 @@
     window.addEventListener('scroll', revealOnScroll);
     window.addEventListener('DOMContentLoaded', revealOnScroll);
   </script>
+  <script>// Smooth brand carousel
+document.addEventListener('DOMContentLoaded', function() {
+  const row = document.getElementById('acBrandsRow');
+  let brands = Array.from(row.children);
+
+  setInterval(() => {
+    // Fade out the first logo smoothly
+    brands[0].classList.add('hide');
+    // Wait for the CSS transition to finish before moving
+    setTimeout(() => {
+      row.appendChild(brands[0]);
+      brands[0].classList.remove('hide');
+      brands = Array.from(row.children);
+    }, 800); // Match the CSS transition duration (0.8s = 800ms)
+  }, 4000); // Change every 4 seconds (adjust as needed)
+});</script>
 </body>
 </html>
