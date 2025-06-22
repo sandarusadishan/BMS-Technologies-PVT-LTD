@@ -1442,5 +1442,21 @@
       window.addEventListener("scroll", revealOnScroll);
       window.addEventListener("DOMContentLoaded", revealOnScroll);
     </script>
+  <script>
+// filepath: d:\BMS Technologies (PVT) LTD\index.html
+// Auto-close navbar when clicking/tapping outside (mobile-friendly)
+document.addEventListener('click', function(event) {
+  var navbar = document.getElementById('navbarNav');
+  var toggler = document.querySelector('.navbar-toggler');
+  // If navbar is open and click is outside navbar and toggler
+  if (
+    navbar.classList.contains('show') &&
+    !navbar.contains(event.target) &&
+    !toggler.contains(event.target)
+  ) {
+    toggler.click();
+  }
+});
+</script>
   </body>
 </html>
