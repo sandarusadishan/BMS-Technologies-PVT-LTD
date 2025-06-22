@@ -474,6 +474,46 @@
         height: auto;
         width: 280px;
       }
+      .partners-logos {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2.5rem 2rem;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      .partners-logos img {
+        height: 140px;
+        width: auto;
+        max-width: 260px;
+        object-fit: contain;
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 4px 24px rgba(39, 174, 96, 0.1);
+        padding: 12px 18px;
+        margin: 0;
+        filter: none;
+        transition: transform 0.3s, box-shadow 0.3s, filter 0.3s;
+        opacity: 1;
+      }
+
+      .partners-logos img:hover {
+        transform: scale(1.08) rotate(-2deg);
+        box-shadow: 0 8px 32px rgba(39, 174, 96, 0.18);
+        filter: brightness(1.1) saturate(1.2);
+      }
+
+      @media (max-width: 768px) {
+        .partners-logos img {
+          height: 70px;
+          max-width: 140px;
+          padding: 8px 12px;
+        }
+        .partners-logos {
+          gap: 1.2rem 1rem;
+        }
+      }
     </style>
   </head>
   <body>
@@ -824,10 +864,11 @@
       <div class="container">
         <h2 class="section-title">Our Clients & Partners</h2>
         <div class="d-flex flex-wrap justify-content-center partners-logos">
-          <img src="assets/client1.png" alt="Client 1" />
-          <img src="assets/client2.png" alt="Client 2" />
-          <img src="assets/client3.png" alt="Client 3" />
-          <img src="assets/client4.png" alt="Client 4" />
+          <img src="assets/Clients/images (1).jpeg" alt="Client 1" />
+          <img src="assets/Clients/images (1).png" alt="Client 2" />
+          <img src="assets/Clients/images.jpeg" alt="Client 3" />
+          <img src="assets/Clients/Path-Finder.jpg" alt="Client 4" />
+          <img src="assets/Clients/images.png" alt="Client 5" />
         </div>
       </div>
     </section>
