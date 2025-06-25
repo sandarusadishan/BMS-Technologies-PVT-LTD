@@ -769,9 +769,449 @@
           font-size: 1.3rem;
         }
       }
+
+      .hero-section {
+        min-height: 100vh;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        background: #145a32;
+      }
+      .hero-bg-slider {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        overflow: hidden;
+      }
+      .hero-bg-slide {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center center;
+        opacity: 0;
+        transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+        will-change: opacity;
+        animation: heroBgZoom 12s infinite alternate;
+      }
+      .hero-bg-slide.active {
+        opacity: 1;
+        z-index: 1;
+        transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      @keyframes heroBgZoom {
+        0% {
+          transform: scale(1);
+        }
+        100% {
+          transform: scale(1.08);
+        }
+      }
+      .hero-bg-slider::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          120deg,
+          rgba(39, 174, 96, 0.82) 0%,
+          rgba(20, 90, 50, 0.82) 100%
+        );
+        z-index: 2;
+        pointer-events: none;
+      }
+      .hero-content {
+        position: relative;
+        z-index: 3;
+        text-align: center;
+        width: 100%;
+        animation: heroContentFadeIn 1.2s;
+      }
+      @keyframes heroContentFadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(40px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .company-name-hero {
+        font-family: "Montserrat", sans-serif;
+        font-size: 3.2rem;
+        font-weight: 900;
+        color: var(--primary);
+        background: #fff;
+        display: inline-block;
+        padding: 0.2em 1.2em;
+        border-radius: 18px;
+        box-shadow: 0 8px 32px rgba(39, 174, 96, 0.13);
+        margin-bottom: 1.2rem;
+        letter-spacing: 2px;
+        animation: neon-glow 2.5s infinite alternate;
+      }
+      @keyframes neon-glow {
+        0% {
+          box-shadow: 0 0 12px #27ae60, 0 0 24px #27ae60;
+        }
+        100% {
+          box-shadow: 0 0 32px #27ae60, 0 0 64px #27ae60;
+        }
+      }
+      .hero-content h2 {
+        font-size: 2.2rem;
+        color: var(--accent);
+        margin-bottom: 1.5rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        animation: fadeInUp 1.2s;
+      }
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(40px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .hero-content .lead {
+        font-size: 1.3rem;
+        margin-bottom: 2.2rem;
+        color: #f8f9fa;
+        font-weight: 500;
+        animation: fadeInUp 1.6s;
+      }
+      .btn-hero {
+        background: var(--accent);
+        color: var(--dark);
+        border: none;
+        padding: 1rem 2.7rem;
+        font-size: 1.2rem;
+        border-radius: 30px;
+        font-weight: 700;
+        box-shadow: 0 8px 32px rgba(241, 196, 15, 0.18);
+        transition: background 0.2s, color 0.2s, transform 0.2s;
+        animation: pulseBtn 2s infinite;
+      }
+      .btn-hero:hover {
+        background: #fff;
+        color: var(--primary);
+        transform: scale(1.07);
+      }
+      @keyframes pulseBtn {
+        0% {
+          box-shadow: 0 0 0 0 var(--accent);
+        }
+        70% {
+          box-shadow: 0 0 0 12px rgba(241, 196, 15, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 var(--accent);
+        }
+      }
+      .btn-outline-light {
+        border: 2px solid #fff;
+        color: #fff;
+        background: transparent;
+        border-radius: 30px;
+        font-weight: 600;
+        transition: background 0.2s, color 0.2s, border 0.2s, transform 0.2s;
+      }
+      .btn-outline-light:hover {
+        background: #fff;
+        color: var(--primary);
+        border-color: var(--primary);
+        transform: scale(1.06);
+      }
+      @media (max-width: 768px) {
+        .company-name-hero {
+          font-size: 1.5rem;
+          padding: 0.2em 0.7em;
+        }
+        .hero-content h2 {
+          font-size: 1.1rem;
+        }
+        .hero-content .lead {
+          font-size: 1rem;
+        }
+      }
+
+      .ac-brands-section {
+        margin: 2.5rem 0 2.5rem 0;
+      }
+      .ac-brands-list {
+        display: flex;
+        justify-content: center;
+        gap: 2.5rem;
+        list-style: none;
+        padding: 0;
+        font-size: 1.3rem;
+        font-weight: 700;
+        margin-bottom: 1.2rem;
+        letter-spacing: 1px;
+      }
+      .ac-brands-list li {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--primary);
+        background: #f8f9fa;
+        border-radius: 2em;
+        padding: 0.3em 1.2em;
+        box-shadow: 0 2px 12px #27ae601a;
+        font-family: "Montserrat", sans-serif;
+        transition: background 0.2s, color 0.2s, transform 0.2s;
+      }
+      .ac-brands-list li:hover {
+        background: var(--primary);
+        color: #fff;
+        transform: scale(1.07);
+      }
+      .ac-brands-row {
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        gap: 2.5rem;
+        flex-wrap: wrap;
+        min-height: 100px;
+        margin-top: 1.5rem;
+      }
+      .brand-card {
+        background: #fff;
+        border-radius: 18px;
+        box-shadow: 0 8px 32px rgba(39, 174, 96, 0.1);
+        padding: 1.2rem 1.5rem 1.1rem 1.5rem;
+        min-width: 180px;
+        max-width: 220px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: transform 0.3s, box-shadow 0.3s;
+        cursor: pointer;
+        opacity: 1;
+      }
+      .brand-card:hover {
+        transform: scale(1.08) translateY(-8px);
+        box-shadow: 0 16px 48px rgba(39, 174, 96, 0.18);
+      }
+      .ac-brand-logo {
+        height: 90px;
+        width: 120px;
+        object-fit: contain;
+        border-radius: 12px;
+        background: #f8f9fa;
+        box-shadow: 0 4px 24px rgba(39, 174, 96, 0.13);
+        margin-bottom: 0.7rem;
+        transition: transform 0.4s, box-shadow 0.4s;
+      }
+      .brand-card:hover .ac-brand-logo {
+        transform: scale(1.12) rotate(-2deg);
+        box-shadow: 0 12px 32px rgba(39, 174, 96, 0.18);
+      }
+      .brand-name {
+        margin-top: 0.5rem;
+        font-weight: 700;
+        color: var(--primary);
+        font-size: 1.1rem;
+        letter-spacing: 1px;
+        font-family: "Montserrat", sans-serif;
+      }
+      @media (max-width: 992px) {
+        .ac-brands-row {
+          gap: 1.2rem;
+        }
+        .brand-card {
+          min-width: 120px;
+          max-width: 140px;
+          padding: 0.7rem 0.5rem 0.7rem 0.5rem;
+        }
+        .ac-brand-logo {
+          height: 48px;
+          width: 60px;
+        }
+      }
+
+      /* Modern Project Card Styles */
+      #portfolio .project-card.modern-card {
+        background: #fff;
+        border-radius: 1.5rem;
+        box-shadow: 0 8px 32px rgba(39, 174, 96, 0.1);
+        padding: 0;
+        margin: 0;
+        min-height: 340px;
+        overflow: visible;
+        transition: transform 0.3s, box-shadow 0.3s;
+        position: relative;
+        cursor: pointer;
+      }
+      #portfolio .project-card.modern-card:hover {
+        transform: scale(1.04) translateY(-8px);
+        box-shadow: 0 16px 48px rgba(39, 174, 96, 0.18);
+        z-index: 2;
+      }
+      .project-img-wrap {
+        position: relative;
+        border-radius: 1.5rem;
+        overflow: hidden;
+        min-height: 260px;
+        background: #f8f9fa;
+      }
+      .project-img {
+        width: 100%;
+        height: 260px;
+        object-fit: cover;
+        border-radius: 1.5rem;
+        transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.5s;
+        box-shadow: 0 2px 16px rgba(39, 174, 96, 0.08);
+      }
+      .project-card.modern-card:hover .project-img {
+        transform: scale(1.08) rotate(-2deg);
+        box-shadow: 0 12px 32px rgba(39, 174, 96, 0.18);
+        filter: brightness(1.08) saturate(1.1);
+      }
+      .project-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          120deg,
+          rgba(39, 174, 96, 0.92) 60%,
+          rgba(241, 196, 15, 0.93) 100%
+        );
+        color: #fff;
+        opacity: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: opacity 0.45s;
+        border-radius: 1.5rem;
+        z-index: 2;
+        padding: 2rem 1.2rem;
+        text-align: center;
+      }
+      .project-card.modern-card:hover .project-overlay {
+        opacity: 1;
+      }
+      .overlay-content h4 {
+        font-size: 1.25rem;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 700;
+        margin-bottom: 0.7rem;
+        color: #f1c40f;
+        letter-spacing: 1px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+      }
+      .overlay-content p {
+        font-size: 1.07rem;
+        margin: 0;
+        color: #fff;
+      }
+      @media (max-width: 992px) {
+        #portfolio .project-card.modern-card {
+          min-height: 200px;
+        }
+        .project-img-wrap,
+        .project-img {
+          height: 120px;
+          min-height: 120px;
+          border-radius: 1rem;
+        }
+        .project-overlay {
+          padding: 1rem 0.5rem;
+          border-radius: 1rem;
+        }
+      }
+
+      /* Modern Team Card Styles */
+      #team .modern-card {
+        background: #fff;
+        border-radius: 1.5rem;
+        box-shadow: 0 8px 32px rgba(39, 174, 96, 0.1);
+        padding: 2.2rem 1.5rem 1.7rem 1.5rem;
+        text-align: center;
+        transition: transform 0.25s, box-shadow 0.25s;
+        position: relative;
+        overflow: hidden;
+        min-height: 340px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        opacity: 1;
+      }
+      #team .modern-card:hover {
+        transform: translateY(-8px) scale(1.03);
+        box-shadow: 0 16px 48px rgba(39, 174, 96, 0.18);
+        z-index: 2;
+      }
+      .team-img-wrap {
+        width: 110px;
+        height: 110px;
+        margin: 0 auto 1rem auto;
+        border-radius: 50%;
+        overflow: hidden;
+        box-shadow: 0 4px 18px rgba(39, 174, 96, 0.13);
+        background: linear-gradient(
+          135deg,
+          var(--primary) 60%,
+          var(--accent) 100%
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.3s, transform 0.3s;
+      }
+      #team .modern-card:hover .team-img-wrap {
+        background: linear-gradient(
+          135deg,
+          var(--accent) 60%,
+          var(--primary) 100%
+        );
+        transform: scale(1.08) rotate(-6deg);
+      }
+      .team-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 4px solid #fff;
+        transition: transform 0.4s;
+        animation: flipInY 1.2s;
+      }
+      @media (max-width: 992px) {
+        #team .modern-card {
+          min-height: 220px;
+          padding: 1.2rem 0.7rem 1.1rem 0.7rem;
+        }
+        .team-img-wrap {
+          width: 70px;
+          height: 70px;
+        }
+      }
     </style>
   </head>
   <body>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- Already in your <head> -->
+
+<!-- Example responsive image -->
+<img src="..." style="max-width:100%;height:auto;" />
+
+<!-- Example Bootstrap grid -->
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-6 col-lg-4">...</div>
+    <div class="col-12 col-md-6 col-lg-4">...</div>
+  </div>
+</div>
     <!-- Floating WhatsApp Chat Button -->
     <a
       href="https://wa.me/message/CDD3J7K5EZJPE1"
@@ -856,16 +1296,6 @@
                 ><i class="fas fa-envelope me-1 d-lg-none"></i>Contact</a
               >
             </li>
-            <li class="nav-item d-none d-lg-block">
-              <a
-                href="https://wa.me/message/CDD3J7K5EZJPE1"
-                target="_blank"
-                class="btn btn-whatsapp ms-2"
-                style="padding: 0.4rem 1.2rem; font-size: 1rem"
-              >
-                <i class="fab fa-whatsapp"></i> WhatsApp
-              </a>
-            </li>
           </ul>
         </div>
       </div>
@@ -880,11 +1310,11 @@
         ></div>
         <div
           class="hero-bg-slide"
-          style="background-image: url('./assets/post1/new1.png')"
+          style="background-image: url('./assets/AC/ac3.jpg')"
         ></div>
         <div
           class="hero-bg-slide"
-          style="background-image: url('./assets/post1/background.png')"
+          style="background-image: url('./assets/CCTV/cctv1.jpg')"
         ></div>
       </div>
       <div class="container hero-content">
@@ -903,8 +1333,35 @@
           class="btn btn-hero shadow-lg animate__animated animate__pulse animate__infinite"
           >Book Service</a
         >
+        <div class="d-flex justify-content-center gap-3 mt-4">
+          <a
+            href="#services"
+            class="btn btn-outline-light btn-lg animate__animated animate__fadeInLeft animate__delay-2s"
+          >
+            <i class="fas fa-cogs"></i> Our Services
+          </a>
+          <a
+            href="#portfolio"
+            class="btn btn-outline-light btn-lg animate__animated animate__fadeInRight animate__delay-2s"
+          >
+            <i class="fas fa-briefcase"></i> Projects
+          </a>
+        </div>
       </div>
     </section>
+    <script>
+      // filepath: d:\BMS Technologies (PVT) LTD\index.html
+      // Hero background slider logic
+      document.addEventListener("DOMContentLoaded", function () {
+        const slides = document.querySelectorAll(".hero-bg-slide");
+        let current = 0;
+        setInterval(() => {
+          slides[current].classList.remove("active");
+          current = (current + 1) % slides.length;
+          slides[current].classList.add("active");
+        }, 5000); // 5 seconds per slide
+      });
+    </script>
 
     <!-- About Section -->
     <section
@@ -1068,64 +1525,60 @@
       </div>
     </section>
 
-    <!-- AC Brands Section with Brand Names -->
+    <!-- AC Brands Section with Brand Names (Modern Carousel Style) -->
     <div class="ac-brands-section fade-in">
       <div class="container">
         <div class="section-title animate__animated animate__fadeInDown">
           We are dealers in following brands
         </div>
-        <ul
-          style="
-            display: flex;
-            justify-content: center;
-            gap: 2.5rem;
-            list-style: none;
-            padding: 0;
-            font-size: 1.3rem;
-            font-weight: 700;
-          "
-        >
-          <li>Daikin</li>
-          <li>LG</li>
-          <li>Samsung</li>
-          <li>Mitsubishi</li>
+        <ul class="ac-brands-list">
+          <li><i class="fab fa-empire" style="color: #27ae60"></i> Daikin</li>
+          <li><i class="fab fa-empire" style="color: #27ae60"></i> Midea</li>
+          <li><i class="fab fa-empire" style="color: #27ae60"></i> Sharp</li>
+          <li><i class="fab fa-empire" style="color: #27ae60"></i> TECO</li>
         </ul>
         <div class="ac-brands-row" id="acBrandsRow">
-          <div class="text-center">
+          <div class="brand-card text-center animate__animated animate__zoomIn">
             <img
               src="assets/brands/ac1.png"
               alt="Daikin"
               title="Daikin"
-              class="ac-brand-logo animate__animated animate__zoomIn"
+              class="ac-brand-logo"
             />
-            <div style="margin-top: 0.5rem; font-weight: 600">Mitsubishi</div>
+            <div class="brand-name">Daikin</div>
           </div>
-          <div class="text-center">
+          <div
+            class="brand-card text-center animate__animated animate__zoomIn animate__delay-1s"
+          >
             <img
               src="assets/brands/ac2.png"
-              alt="LG"
-              title="LG"
-              class="ac-brand-logo animate__animated animate__zoomIn"
+              alt="Midea"
+              title="Midea"
+              class="ac-brand-logo"
             />
-            <div style="margin-top: 0.5rem; font-weight: 600">LG</div>
+            <div class="brand-name">Midea</div>
           </div>
-          <div class="text-center">
+          <div
+            class="brand-card text-center animate__animated animate__zoomIn animate__delay-2s"
+          >
             <img
               src="assets/brands/ac3.png"
-              alt="Samsung"
-              title="Samsung"
-              class="ac-brand-logo animate__animated animate__zoomIn"
+              alt="Sharp"
+              title="Sharp"
+              class="ac-brand-logo"
             />
-            <div style="margin-top: 0.5rem; font-weight: 600">Daikin</div>
+            <div class="brand-name">Sharp</div>
           </div>
-          <div class="text-center">
+          <div
+            class="brand-card text-center animate__animated animate__zoomIn animate__delay-3s"
+          >
             <img
               src="assets/brands/ac4.png"
-              alt="Mitsubishi"
-              title="Mitsubishi"
-              class="ac-brand-logo animate__animated animate__zoomIn"
+              alt="TECO"
+              title="TECO"
+              class="ac-brand-logo"
             />
-            <div style="margin-top: 0.5rem; font-weight: 600">Samsung</div>
+            <div class="brand-name">TECO</div>
           </div>
         </div>
       </div>
@@ -1283,64 +1736,83 @@
       </div>
     </section>
 
-    <!-- Portfolio/Projects Section (Next Level with Animations & Overlay) -->
+    <!-- Portfolio/Projects Section (Modern Animated Overlay Cards) -->
     <section class="py-5 fade-in" id="portfolio">
       <div class="container">
         <h2 class="section-title animate__animated animate__fadeInDown">
           Our Projects
         </h2>
-        <div class="row">
+        <div class="row g-4">
           <div class="col-md-4">
             <div
-              class="project-card position-relative animate__animated animate__fadeInUp"
+              class="project-card modern-card animate__animated animate__fadeInUp"
             >
-              <img
-                src="assets/AC/ac1.jpg"
-                alt="Project 1"
-                class="project-img"
-              />
-              <div class="project-overlay">
-                <h4>Factory AC Grant Installation</h4>
-                <p>
-                  Completed a 100-unit AC installation under government grant
-                  for a leading textile factory.
-                </p>
+              <div class="project-img-wrap">
+                <img
+                  src="assets/AC/ac1.jpg"
+                  alt="Project 1"
+                  class="project-img"
+                />
+                <div class="project-overlay">
+                  <div class="overlay-content">
+                    <h4>
+                      <i class="fas fa-snowflake me-2"></i>Factory AC Grant
+                      Installation
+                    </h4>
+                    <p>
+                      Completed a 100-unit AC installation under government
+                      grant for a leading textile factory.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
           <div class="col-md-4">
             <div
-              class="project-card position-relative animate__animated animate__fadeInUp animate__delay-1s"
+              class="project-card modern-card animate__animated animate__fadeInUp animate__delay-1s"
             >
-              <img
-                src="assets/AC/ac2.jpg"
-                alt="Project 2"
-                class="project-img"
-              />
-              <div class="project-overlay">
-                <h4>Supermarket Cold Room</h4>
-                <p>
-                  Designed and built a 5000 sq.ft. cold storage for a major
-                  supermarket chain.
-                </p>
+              <div class="project-img-wrap">
+                <img
+                  src="assets/AC/ac2.jpg"
+                  alt="Project 2"
+                  class="project-img"
+                />
+                <div class="project-overlay">
+                  <div class="overlay-content">
+                    <h4>
+                      <i class="fas fa-warehouse me-2"></i>Supermarket Cold Room
+                    </h4>
+                    <p>
+                      Designed and built a 5000 sq.ft. cold storage for a major
+                      supermarket chain.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
           <div class="col-md-4">
             <div
-              class="project-card position-relative animate__animated animate__fadeInUp animate__delay-2s"
+              class="project-card modern-card animate__animated animate__fadeInUp animate__delay-2s"
             >
-              <img
-                src="assets/CCTV/cctv4.jpg"
-                alt="Project 3"
-                class="project-img"
-              />
-              <div class="project-overlay">
-                <h4>Industrial CCTV Network</h4>
-                <p>
-                  Installed 80+ HD cameras with remote monitoring for a
-                  logistics warehouse.
-                </p>
+              <div class="project-img-wrap">
+                <img
+                  src="assets/CCTV/cctv4.jpg"
+                  alt="Project 3"
+                  class="project-img"
+                />
+                <div class="project-overlay">
+                  <div class="overlay-content">
+                    <h4>
+                      <i class="fas fa-video me-2"></i>Industrial CCTV Network
+                    </h4>
+                    <p>
+                      Installed 80+ HD cameras with remote monitoring for a
+                      logistics warehouse.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -1668,20 +2140,33 @@
       </div>
     </section>
 
-    <!-- Team Section with Two Members -->
+    <!-- Team Section with Two Members (Modern Animated Cards) -->
     <section class="py-5 fade-in" id="team">
       <div class="container">
-        <h2 class="section-title">Our Team</h2>
-        <div class="row justify-content-center">
+        <h2 class="section-title animate__animated animate__fadeInDown">
+          Our Team
+        </h2>
+        <div class="row justify-content-center g-4">
           <div class="col-md-5 d-flex align-items-stretch">
-            <div class="team-card w-100">
-              <img
-                src="assets/Team/WhatsApp Image 2025-06-22 at 22.06.25_09305623.jpg"
-                alt="Nilan Perera"
-                class="team-img"
-              />
-              <h5>Mr. P. A. Nilan Sajeewan Perera</h5>
-              <p>Director | CEO</p>
+            <div
+              class="team-card modern-card animate__animated animate__fadeInLeft"
+            >
+              <div class="team-img-wrap mb-3">
+                <img
+                  src="assets/Team/WhatsApp Image 2025-06-22 at 22.06.25_09305623.jpg"
+                  alt="Nilan Perera"
+                  class="team-img"
+                />
+              </div>
+              <h5
+                class="fw-bold mb-1"
+                style="font-family: 'Montserrat', sans-serif"
+              >
+                Mr. P. A. Nilan Sajeewan Perera
+              </h5>
+              <p class="text-primary mb-1" style="font-weight: 600">
+                Director | CEO
+              </p>
               <p style="text-align: justify">
                 Mr. Nalin Perera is a part-qualified member of the Accounting
                 Technicians of Sri Lanka and a member of the Institute of
@@ -1695,15 +2180,32 @@
             </div>
           </div>
           <div class="col-md-5 d-flex align-items-stretch">
-            <div class="team-card w-100">
-              <img
-                src="assets/Team/rasika.png"
-                alt="Nadeesha Fernando"
-                class="team-img"
-              />
-              <h5>Major Rasika Jayasinghe (Rtd).</h5>
-              <p>BSc(DS). Mech Eng.</p>
-              <p>Director | Manager</p>
+            <div
+              class="team-card modern-card animate__animated animate__fadeInRight"
+            >
+              <div class="team-img-wrap mb-3">
+                <img
+                  src="assets/Team/rasika.png"
+                  alt="Rasika Jayasinghe"
+                  class="team-img"
+                />
+              </div>
+              <h5
+                class="fw-bold mb-1"
+                style="font-family: 'Montserrat', sans-serif"
+              >
+                Major Rasika Jayasinghe (Rtd).
+              </h5>
+              <h5
+                class="fw-bold mb-1"
+                style="font-family: 'Montserrat', sans-serif"
+              >
+                BSc(DS). Mech Eng.
+              </h5>
+
+              <p class="text-primary mb-1" style="font-weight: 600">
+                Director | Manager
+              </p>
               <p style="text-align: justify">
                 Rasika Jayasinghe is a former commissioned officer in the Sri
                 Lanka Army, serving in the Military Engineering Unit with over
@@ -1716,6 +2218,7 @@
         </div>
       </div>
     </section>
+    
 
     <!-- Partners/Clients Section -->
     <section class="py-5 fade-in">
@@ -1735,126 +2238,147 @@
       </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="contact-section fade-in" id="contact">
-      <div class="container">
-        <h2 class="section-title">Contact Us</h2>
-        <div class="row g-5">
-          <div class="col-lg-6">
-            <form action="https://formspree.io/f/mwpbwnkp" method="POST">
-              <div class="mb-3">
-                <input
-                  type="text"
-                  name="name"
-                  class="form-control"
-                  placeholder="Your Name"
-                  required
-                />
-              </div>
-              <div class="mb-3">
-                <input
-                  type="email"
-                  name="email"
-                  class="form-control"
-                  placeholder="Email Address"
-                  required
-                />
-              </div>
-              <div class="mb-3">
-                <textarea
-                  name="message"
-                  class="form-control"
-                  rows="5"
-                  placeholder="Your Message"
-                  required
-                ></textarea>
-              </div>
-              <button type="submit" class="btn btn-success btn-lg">
-                Send Message
-              </button>
-            </form>
+<!-- Contact Section (Modern, Animated) -->
+<section class="contact-section fade-in" id="contact">
+  <div class="container">
+    <h2 class="section-title animate__animated animate__fadeInDown">Contact Us</h2>
+    <div class="row g-5 align-items-center">
+      <div class="col-lg-6">
+        <form action="https://formspree.io/f/mwpbwnkp" method="POST" class="modern-card animate__animated animate__fadeInLeft" style="border-radius:1.5rem;">
+          <div class="mb-3">
+            <input
+              type="text"
+              name="name"
+              class="form-control form-control-lg"
+              placeholder="Your Name"
+              required
+              style="border-radius: 1em;"
+            />
           </div>
-          <div class="col-lg-6">
-            <div class="mt-4">
-              <a
-                href="https://maps.app.goo.gl/q4Qpved5jiZ3svDS8"
-                target="_blank"
-                class="btn btn-outline-primary"
-              >
-                <i class="fas fa-map-marker-alt"></i> View Location on Google
-                Maps
-              </a>
-            </div>
-            <div class="map-container">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63371.81442024164!2d79.8562055!3d6.9218389499999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae253dd11b5a317%3A0x2a7a7c3608ef502!2sKelaniya!5e0!3m2!1sen!2slk!4v1689256645304!5m2!1sen!2slk"
-                width="100%"
-                height="400"
-                style="border: 0"
-                allowfullscreen=""
-                loading="lazy"
-                title="BMS Technologies location on Google Maps"
-              ></iframe>
-            </div>
+          <div class="mb-3">
+            <input
+              type="email"
+              name="email"
+              class="form-control form-control-lg"
+              placeholder="Email Address"
+              required
+              style="border-radius: 1em;"
+            />
+          </div>
+          <div class="mb-3">
+            <textarea
+              name="message"
+              class="form-control form-control-lg"
+              rows="5"
+              placeholder="Your Message"
+              required
+              style="border-radius: 1em;"
+            ></textarea>
+          </div>
+          <button type="submit" class="btn btn-hero w-100 animate__animated animate__pulse animate__infinite" style="font-size:1.15rem;">
+            <i class="fas fa-paper-plane me-2"></i>Send Message
+          </button>
+        </form>
+      </div>
+      <div class="col-lg-6">
+        <div class="modern-card animate__animated animate__fadeInRight" style="border-radius:1.5rem;">
+          <div class="mb-4">
+            <a
+              href="https://maps.app.goo.gl/q4Qpved5jiZ3svDS8"
+              target="_blank"
+              class="btn btn-outline-primary btn-lg"
+              style="border-radius:2em;"
+            >
+              <i class="fas fa-map-marker-alt"></i> View Location on Google Maps
+            </a>
+          </div>
+          <div class="map-container" style="border-radius:1.2em;overflow:hidden;">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63371.81442024164!2d79.8562055!3d6.9218389499999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae253dd11b5a317%3A0x2a7a7c3608ef502!2sKelaniya!5e0!3m2!1sen!2slk!4v1689256645304!5m2!1sen!2slk"
+              width="100%"
+              height="340"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              title="BMS Technologies location on Google Maps"
+            ></iframe>
+          </div>
+          <div class="mt-4 text-center">
+            <a href="tel:+94703050100" class="btn btn-outline-success me-2" style="border-radius:2em;">
+              <i class="fas fa-phone"></i> +94 070 305 0100
+            </a>
+            <a href="mailto:info.bmstechno@gmail.com" class="btn btn-outline-secondary" style="border-radius:2em;">
+              <i class="fas fa-envelope"></i> info.bmstechno@gmail.com
+            </a>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="container">
-        <div class="row g-4">
-          <div class="col-md-4 text-center text-md-start">
-            <div class="d-flex align-items-center mb-2">
-              <img src="assets/logo.png" alt="Logo" class="logo-img me-2" />
-              <span class="footer-company-name">BMS Technologies</span>
-            </div>
-            <p>Your trusted partner in technical solutions since 2010</p>
-          </div>
-          <div class="col-md-4 text-center text-md-start">
-            <h4>Contact Info</h4>
-            <ul class="list-unstyled">
-              <li>
-                <i class="fas fa-map-marker-alt"></i> 166/B, Kandy Road,
-                Dalugama, Kelaniya, SriLanka
-              </li>
-              <li><i class="fas fa-phone"></i> +94 070 305 0100</li>
-              <li><i class="fas fa-envelope"></i> info.bmstechno@gmail.com</li>
-            </ul>
-          </div>
-          <div class="col-md-4 text-center text-md-start">
-            <h4>Follow Us</h4>
-            <div class="social-links">
-              <a
-                href="https://www.facebook.com/share/164WgrEnko/"
-                class="social-icon"
-                ><i class="fab fa-facebook"></i
-              ></a>
-              <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
-              <a
-                href="https://www.tiktok.com/@nilanperera8?_r=1&_d=ei17a5bd7ijj8c&sec_uid=MS4wLjABAAAAYy-0OWYFTOsxucehAbX3mb7tNqburWHI191j2rJYYLhuwMM_qNur7_YLd1E5eztO&share_author_id=7452234139241595909&sharer_language=en&source=h5_m&u_code=ei17ad24773ib2&timestamp=1750774973&user_id=7452234139241595909&sec_user_id=MS4wLjABAAAAYy-0OWYFTOsxucehAbX3mb7tNqburWHI191j2rJYYLhuwMM_qNur7_YLd1E5eztO&utm_source=whatsapp_business&utm_campaign=client_share&utm_medium=android&share_iid=7519519988018972434&share_link_id=d868189c-77e4-4158-977e-88b99c6072d2&share_app_id=1233&ugbiz_name=ACCOUNT&ug_btm=b8727%2Cb7360&social_share_type=5&enable_checksum=1"
-                class="social-icon"
-                ><i class="fab fa-tiktok"></i
-              ></a>
-            </div>
-          </div>
+  <!-- Footer (Modern, Animated) -->
+<footer class="footer">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-4 text-center text-md-start">
+        <div class="d-flex align-items-center mb-2 animate__animated animate__fadeInLeft">
+          <img src="assets/logo.png" alt="Logo" class="logo-img me-2" />
+          <span class="footer-company-name">BMS Technologies</span>
         </div>
-        <div class="text-center mt-4">
-          <span style="vertical-align: middle; margin-right: 8px">
-            <svg width="28" height="28" viewBox="0 0 48 48" fill="none">
-              <path
-                d="M44 6C32 8 8 24 8 40c0 0 8-2 16-8s16-18 20-26z"
-                fill="#27ae60"
-              />
-            </svg>
-          </span>
-          <p class="d-inline">
-            &copy; 2019 BMS Technologies (PVT) LTD. All rights reserved.
-          </p>
+        <p class="animate__animated animate__fadeInLeft animate__delay-1s">
+          Your trusted partner in technical solutions since 2010
+        </p>
+      </div>
+      <div class="col-md-4 text-center text-md-start">
+        <h4 class="animate__animated animate__fadeInDown">Contact Info</h4>
+        <ul class="list-unstyled animate__animated animate__fadeInDown animate__delay-1s">
+          <li>
+            <i class="fas fa-map-marker-alt"></i> 166/B, Kandy Road,
+            Dalugama, Kelaniya, SriLanka
+          </li>
+          <li><i class="fas fa-phone"></i> <a href="tel:+94703050100" style="color:inherit;text-decoration:none;">+94 070 305 0100</a></li>
+          <li><i class="fas fa-envelope"></i> <a href="mailto:info.bmstechno@gmail.com" style="color:inherit;text-decoration:none;">info.bmstechno@gmail.com</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4 text-center text-md-start">
+        <h4 class="animate__animated animate__fadeInRight">Follow Us</h4>
+        <div class="social-links animate__animated animate__fadeInRight animate__delay-1s">
+          <a
+            href="https://www.facebook.com/share/164WgrEnko/"
+            class="social-icon"
+            target="_blank"
+            rel="noopener"
+            aria-label="Facebook"
+            ><i class="fab fa-facebook"></i
+          ></a>
+          <a href="#" class="social-icon" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a
+            href="https://www.tiktok.com/@nilanperera8?_r=1&_d=ei17a5bd7ijj8c&sec_uid=MS4wLjABAAAAYy-0OWYFTOsxucehAbX3mb7tNqburWHI191j2rJYYLhuwMM_qNur7_YLd1E5eztO&share_author_id=7452234139241595909&sharer_language=en&source=h5_m&u_code=ei17ad24773ib2&timestamp=1750774973&user_id=7452234139241595909&sec_user_id=MS4wLjABAAAAYy-0OWYFTOsxucehAbX3mb7tNqburWHI191j2rJYYLhuwMM_qNur7_YLd1E5eztO&utm_source=whatsapp_business&utm_campaign=client_share&utm_medium=android&share_iid=7519519988018972434&share_link_id=d868189c-77e4-4158-977e-88b99c6072d2&share_app_id=1233&ugbiz_name=ACCOUNT&ug_btm=b8727%2Cb7360&social_share_type=5&enable_checksum=1"
+            class="social-icon"
+            target="_blank"
+            rel="noopener"
+            aria-label="TikTok"
+            ><i class="fab fa-tiktok"></i
+          ></a>
         </div>
       </div>
-    </footer>
+    </div>
+    <div class="text-center mt-4 animate__animated animate__fadeInUp">
+      <span style="vertical-align: middle; margin-right: 8px">
+        <svg width="28" height="28" viewBox="0 0 48 48" fill="none">
+          <path
+            d="M44 6C32 8 8 24 8 40c0 0 8-2 16-8s16-18 20-26z"
+            fill="#27ae60"
+          />
+        </svg>
+      </span>
+      <p class="d-inline">
+        &copy; 2019 BMS Technologies (PVT) LTD. All rights reserved.
+      </p>
+    </div>
+  </div>
+</footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
