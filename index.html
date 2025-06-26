@@ -24,22 +24,22 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500&display=swap"
       rel="stylesheet"
     />
-   <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<!-- Already in your <head> -->
+    <!-- Already in your <head> -->
 
-<!-- Example responsive image -->
-<img src="..." style="max-width:100%;height:auto;" />
+    <!-- Example responsive image -->
+    <img src="..." style="max-width: 100%; height: auto" />
 
-<!-- Example Bootstrap grid -->
-<div class="container">
-  <div class="row">
-    <div class="col-12 col-md-6 col-lg-4">...</div>
-    <div class="col-12 col-md-6 col-lg-4">...</div>
-  </div>
-</div>
+    <!-- Example Bootstrap grid -->
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-6 col-lg-4">...</div>
+        <div class="col-12 col-md-6 col-lg-4">...</div>
+      </div>
+    </div>
     <!-- Floating WhatsApp Chat Button -->
     <a
       href="https://wa.me/message/CDD3J7K5EZJPE1"
@@ -50,106 +50,106 @@
     >
       <i class="fab fa-whatsapp"></i>
     </a>
-    
+
     <nav
-  class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm animate__animated animate__fadeInDown hide-on-scroll"
-  style="background: rgba(255, 255, 255, 0.97); backdrop-filter: blur(8px)"
->
-  <div class="container">
-    <a class="navbar-brand d-flex align-items-center gap-2" href="#home">
-      <img
-        src="assets/logo.png"
-        alt="Logo"
-        class="logo-img"
-        style="
-          height: 50px;
-          width: auto;
-          border-radius: 8px;
-          box-shadow: 0 2px 8px rgba(39, 174, 96, 0.08);
-        "
-      />
-      <span
-        style="
-          font-family: 'Montserrat', sans-serif;
-          font-weight: 800;
-          font-size: 1.3rem;
-          color: var(--primary);
-          letter-spacing: 1px;
-        "
-      ></span>
-    </a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarNav"
-      aria-controls="navbarNav"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-      style="border: none; outline: none"
+      class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm animate__animated animate__fadeInDown hide-on-scroll"
+      style="background: rgba(255, 255, 255, 0.97); backdrop-filter: blur(8px)"
     >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div
-      class="collapse navbar-collapse justify-content-end"
-      id="navbarNav"
-    >
-      <ul class="navbar-nav align-items-center gap-lg-2">
-        <li class="nav-item">
-          <a class="nav-link fw-bold px-3 active" href="#home"
-            ><i class="fas fa-home me-1 d-lg-none"></i>Home</a
-          >
-        </li>
-        <li class="nav-item">
-          <a class="nav-link fw-bold px-3" href="#about"
-            ><i class="fas fa-info-circle me-1 d-lg-none"></i>About</a
-          >
-        </li>
-        <li class="nav-item">
-          <a class="nav-link fw-bold px-3" href="#services"
-            ><i class="fas fa-cogs me-1 d-lg-none"></i>Services</a
-          >
-        </li>
-        <li class="nav-item">
-          <a class="nav-link fw-bold px-3" href="#portfolio"
-            ><i class="fas fa-briefcase me-1 d-lg-none"></i>Portfolio</a
-          >
-        </li>
-        <li class="nav-item">
-          <a class="nav-link fw-bold px-3" href="#team"
-            ><i class="fas fa-users me-1 d-lg-none"></i>Team</a
-          >
-        </li>
-        <li class="nav-item">
-          <a class="nav-link fw-bold px-3" href="#contact"
-            ><i class="fas fa-envelope me-1 d-lg-none"></i>Contact</a
-          >
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-<script>
-// filepath: d:\BMS Technologies (PVT) LTD\index.html
-// Hide navbar on scroll down, show on scroll up, and show if mouse is near top
-let lastScrollTop = 0;
-const navbar = document.querySelector('.hide-on-scroll');
-window.addEventListener('scroll', function() {
-  let st = window.pageYOffset || document.documentElement.scrollTop;
-  if (st > lastScrollTop && st > 80) {
-    navbar.classList.add('navbar-hidden');
-  } else {
-    navbar.classList.remove('navbar-hidden');
-  }
-  lastScrollTop = st <= 0 ? 0 : st;
-});
-// Show navbar if mouse is near top (within 60px)
-document.addEventListener('mousemove', function(e) {
-  if (e.clientY < 60) {
-    navbar.classList.remove('navbar-hidden');
-  }
-});
-</script>
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="#home">
+          <img
+            src="assets/logo.png"
+            alt="Logo"
+            class="logo-img"
+            style="
+              height: 50px;
+              width: auto;
+              border-radius: 8px;
+              box-shadow: 0 2px 8px rgba(39, 174, 96, 0.08);
+            "
+          />
+          <span
+            style="
+              font-family: 'Montserrat', sans-serif;
+              font-weight: 800;
+              font-size: 1.3rem;
+              color: var(--primary);
+              letter-spacing: 1px;
+            "
+          ></span>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+          style="border: none; outline: none"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav align-items-center gap-lg-2">
+            <li class="nav-item">
+              <a class="nav-link fw-bold px-3 active" href="#home"
+                ><i class="fas fa-home me-1 d-lg-none"></i>Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-bold px-3" href="#about"
+                ><i class="fas fa-info-circle me-1 d-lg-none"></i>About</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-bold px-3" href="#services"
+                ><i class="fas fa-cogs me-1 d-lg-none"></i>Services</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-bold px-3" href="#portfolio"
+                ><i class="fas fa-briefcase me-1 d-lg-none"></i>Portfolio</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-bold px-3" href="#team"
+                ><i class="fas fa-users me-1 d-lg-none"></i>Team</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-bold px-3" href="#contact"
+                ><i class="fas fa-envelope me-1 d-lg-none"></i>Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <script>
+      // filepath: d:\BMS Technologies (PVT) LTD\index.html
+      // Hide navbar on scroll down, show on scroll up, and show if mouse is near top
+      let lastScrollTop = 0;
+      const navbar = document.querySelector(".hide-on-scroll");
+      window.addEventListener("scroll", function () {
+        let st = window.pageYOffset || document.documentElement.scrollTop;
+        if (st > lastScrollTop && st > 80) {
+          navbar.classList.add("navbar-hidden");
+        } else {
+          navbar.classList.remove("navbar-hidden");
+        }
+        lastScrollTop = st <= 0 ? 0 : st;
+      });
+      // Show navbar if mouse is near top (within 60px)
+      document.addEventListener("mousemove", function (e) {
+        if (e.clientY < 60) {
+          navbar.classList.remove("navbar-hidden");
+        }
+      });
+    </script>
     <!-- Hero Section -->
     <section class="hero-section d-flex align-items-center" id="home">
       <!-- Background slider -->
@@ -1068,7 +1068,6 @@ document.addEventListener('mousemove', function(e) {
         </div>
       </div>
     </section>
-    
 
     <!-- Partners/Clients Section -->
     <section class="py-5 fade-in">
@@ -1088,147 +1087,195 @@ document.addEventListener('mousemove', function(e) {
       </div>
     </section>
 
-<!-- Contact Section (Modern, Animated) -->
-<section class="contact-section fade-in" id="contact">
-  <div class="container">
-    <h2 class="section-title animate__animated animate__fadeInDown">Contact Us</h2>
-    <div class="row g-5 align-items-center">
-      <div class="col-lg-6">
-        <form action="https://formspree.io/f/mwpbwnkp" method="POST" class="modern-card animate__animated animate__fadeInLeft" style="border-radius:1.5rem;">
-          <div class="mb-3">
-            <input
-              type="text"
-              name="name"
-              class="form-control form-control-lg"
-              placeholder="Your Name"
-              required
-              style="border-radius: 1em;"
-            />
-          </div>
-          <div class="mb-3">
-            <input
-              type="email"
-              name="email"
-              class="form-control form-control-lg"
-              placeholder="Email Address"
-              required
-              style="border-radius: 1em;"
-            />
-          </div>
-          <div class="mb-3">
-            <textarea
-              name="message"
-              class="form-control form-control-lg"
-              rows="5"
-              placeholder="Your Message"
-              required
-              style="border-radius: 1em;"
-            ></textarea>
-          </div>
-          <button type="submit" class="btn btn-hero w-100 animate__animated animate__pulse animate__infinite" style="font-size:1.15rem;">
-            <i class="fas fa-paper-plane me-2"></i>Send Message
-          </button>
-        </form>
-      </div>
-      <div class="col-lg-6">
-        <div class="modern-card animate__animated animate__fadeInRight" style="border-radius:1.5rem;">
-          <div class="mb-4">
-            <a
-              href="https://maps.app.goo.gl/q4Qpved5jiZ3svDS8"
-              target="_blank"
-              class="btn btn-outline-primary btn-lg"
-              style="border-radius:2em;"
+    <!-- Contact Section (Modern, Animated) -->
+    <section class="contact-section fade-in" id="contact">
+      <div class="container">
+        <h2 class="section-title animate__animated animate__fadeInDown">
+          Contact Us
+        </h2>
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-6">
+            <form
+              action="https://formspree.io/f/mwpbwnkp"
+              method="POST"
+              class="modern-card animate__animated animate__fadeInLeft"
+              style="border-radius: 1.5rem"
             >
-              <i class="fas fa-map-marker-alt"></i> View Location on Google Maps
-            </a>
+              <div class="mb-3">
+                <input
+                  type="text"
+                  name="name"
+                  class="form-control form-control-lg"
+                  placeholder="Your Name"
+                  required
+                  style="border-radius: 1em"
+                />
+              </div>
+              <div class="mb-3">
+                <input
+                  type="email"
+                  name="email"
+                  class="form-control form-control-lg"
+                  placeholder="Email Address"
+                  required
+                  style="border-radius: 1em"
+                />
+              </div>
+              <div class="mb-3">
+                <textarea
+                  name="message"
+                  class="form-control form-control-lg"
+                  rows="5"
+                  placeholder="Your Message"
+                  required
+                  style="border-radius: 1em"
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                class="btn btn-hero w-100 animate__animated animate__pulse animate__infinite"
+                style="font-size: 1.15rem"
+              >
+                <i class="fas fa-paper-plane me-2"></i>Send Message
+              </button>
+            </form>
           </div>
-          <div class="map-container" style="border-radius:1.2em;overflow:hidden;">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63371.81442024164!2d79.8562055!3d6.9218389499999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae253dd11b5a317%3A0x2a7a7c3608ef502!2sKelaniya!5e0!3m2!1sen!2slk!4v1689256645304!5m2!1sen!2slk"
-              width="100%"
-              height="340"
-              style="border: 0"
-              allowfullscreen=""
-              loading="lazy"
-              title="BMS Technologies location on Google Maps"
-            ></iframe>
-          </div>
-          <div class="mt-4 text-center">
-            <a href="tel:+94703050100" class="btn btn-outline-success me-2" style="border-radius:2em;">
-              <i class="fas fa-phone"></i> +94 070 305 0100
-            </a>
-            <a href="mailto:info.bmstechno@gmail.com" class="btn btn-outline-secondary" style="border-radius:2em;">
-              <i class="fas fa-envelope"></i> info.bmstechno@gmail.com
-            </a>
+          <div class="col-lg-6">
+            <div
+              class="modern-card animate__animated animate__fadeInRight"
+              style="border-radius: 1.5rem"
+            >
+              <div class="mb-4">
+                <a
+                  href="https://maps.app.goo.gl/q4Qpved5jiZ3svDS8"
+                  target="_blank"
+                  class="btn btn-outline-primary btn-lg"
+                  style="border-radius: 2em"
+                >
+                  <i class="fas fa-map-marker-alt"></i> View Location on Google
+                  Maps
+                </a>
+              </div>
+              <div
+                class="map-container"
+                style="border-radius: 1.2em; overflow: hidden"
+              >
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63371.81442024164!2d79.8562055!3d6.9218389499999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae253dd11b5a317%3A0x2a7a7c3608ef502!2sKelaniya!5e0!3m2!1sen!2slk!4v1689256645304!5m2!1sen!2slk"
+                  width="100%"
+                  height="340"
+                  style="border: 0"
+                  allowfullscreen=""
+                  loading="lazy"
+                  title="BMS Technologies location on Google Maps"
+                ></iframe>
+              </div>
+              <div class="mt-4 text-center">
+                <a
+                  href="tel:+94703050100"
+                  class="btn btn-outline-success me-2"
+                  style="border-radius: 2em"
+                >
+                  <i class="fas fa-phone"></i> +94 070 305 0100
+                </a>
+                <a
+                  href="mailto:info.bmstechno@gmail.com"
+                  class="btn btn-outline-secondary"
+                  style="border-radius: 2em"
+                >
+                  <i class="fas fa-envelope"></i> info.bmstechno@gmail.com
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-  <!-- Footer (Modern, Animated) -->
-<footer class="footer">
-  <div class="container">
-    <div class="row g-4">
-      <div class="col-md-4 text-center text-md-start">
-        <div class="d-flex align-items-center mb-2 animate__animated animate__fadeInLeft">
-          <img src="assets/logo.png" alt="Logo" class="logo-img me-2" />
-          <span class="footer-company-name">BMS Technologies</span>
+    <!-- Footer (Modern, Animated) -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md-4 text-center text-md-start">
+            <div
+              class="d-flex align-items-center mb-2 animate__animated animate__fadeInLeft"
+            >
+              <img src="assets/logo.png" alt="Logo" class="logo-img me-2" />
+              <span class="footer-company-name">BMS Technologies</span>
+            </div>
+            <p class="animate__animated animate__fadeInLeft animate__delay-1s">
+              Your trusted partner in technical solutions since 2010
+            </p>
+          </div>
+          <div class="col-md-4 text-center text-md-start">
+            <h4 class="animate__animated animate__fadeInDown">Contact Info</h4>
+            <ul
+              class="list-unstyled animate__animated animate__fadeInDown animate__delay-1s"
+            >
+              <li>
+                <i class="fas fa-map-marker-alt"></i> 166/B, Kandy Road,
+                Dalugama, Kelaniya, SriLanka
+              </li>
+              <li>
+                <i class="fas fa-phone"></i>
+                <a
+                  href="tel:+94703050100"
+                  style="color: inherit; text-decoration: none"
+                  >+94 070 305 0100</a
+                >
+              </li>
+              <li>
+                <i class="fas fa-envelope"></i>
+                <a
+                  href="mailto:info.bmstechno@gmail.com"
+                  style="color: inherit; text-decoration: none"
+                  >info.bmstechno@gmail.com</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-4 text-center text-md-start">
+            <h4 class="animate__animated animate__fadeInRight">Follow Us</h4>
+            <div
+              class="social-links animate__animated animate__fadeInRight animate__delay-1s"
+            >
+              <a
+                href="https://www.facebook.com/share/164WgrEnko/"
+                class="social-icon"
+                target="_blank"
+                rel="noopener"
+                aria-label="Facebook"
+                ><i class="fab fa-facebook"></i
+              ></a>
+              <a href="#" class="social-icon" aria-label="YouTube"
+                ><i class="fab fa-youtube"></i
+              ></a>
+              <a
+                href="https://www.tiktok.com/@nilanperera8?_r=1&_d=ei17a5bd7ijj8c&sec_uid=MS4wLjABAAAAYy-0OWYFTOsxucehAbX3mb7tNqburWHI191j2rJYYLhuwMM_qNur7_YLd1E5eztO&share_author_id=7452234139241595909&sharer_language=en&source=h5_m&u_code=ei17ad24773ib2&timestamp=1750774973&user_id=7452234139241595909&sec_user_id=MS4wLjABAAAAYy-0OWYFTOsxucehAbX3mb7tNqburWHI191j2rJYYLhuwMM_qNur7_YLd1E5eztO&utm_source=whatsapp_business&utm_campaign=client_share&utm_medium=android&share_iid=7519519988018972434&share_link_id=d868189c-77e4-4158-977e-88b99c6072d2&share_app_id=1233&ugbiz_name=ACCOUNT&ug_btm=b8727%2Cb7360&social_share_type=5&enable_checksum=1"
+                class="social-icon"
+                target="_blank"
+                rel="noopener"
+                aria-label="TikTok"
+                ><i class="fab fa-tiktok"></i
+              ></a>
+            </div>
+          </div>
         </div>
-        <p class="animate__animated animate__fadeInLeft animate__delay-1s">
-          Your trusted partner in technical solutions since 2010
-        </p>
-      </div>
-      <div class="col-md-4 text-center text-md-start">
-        <h4 class="animate__animated animate__fadeInDown">Contact Info</h4>
-        <ul class="list-unstyled animate__animated animate__fadeInDown animate__delay-1s">
-          <li>
-            <i class="fas fa-map-marker-alt"></i> 166/B, Kandy Road,
-            Dalugama, Kelaniya, SriLanka
-          </li>
-          <li><i class="fas fa-phone"></i> <a href="tel:+94703050100" style="color:inherit;text-decoration:none;">+94 070 305 0100</a></li>
-          <li><i class="fas fa-envelope"></i> <a href="mailto:info.bmstechno@gmail.com" style="color:inherit;text-decoration:none;">info.bmstechno@gmail.com</a></li>
-        </ul>
-      </div>
-      <div class="col-md-4 text-center text-md-start">
-        <h4 class="animate__animated animate__fadeInRight">Follow Us</h4>
-        <div class="social-links animate__animated animate__fadeInRight animate__delay-1s">
-          <a
-            href="https://www.facebook.com/share/164WgrEnko/"
-            class="social-icon"
-            target="_blank"
-            rel="noopener"
-            aria-label="Facebook"
-            ><i class="fab fa-facebook"></i
-          ></a>
-          <a href="#" class="social-icon" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-          <a
-            href="https://www.tiktok.com/@nilanperera8?_r=1&_d=ei17a5bd7ijj8c&sec_uid=MS4wLjABAAAAYy-0OWYFTOsxucehAbX3mb7tNqburWHI191j2rJYYLhuwMM_qNur7_YLd1E5eztO&share_author_id=7452234139241595909&sharer_language=en&source=h5_m&u_code=ei17ad24773ib2&timestamp=1750774973&user_id=7452234139241595909&sec_user_id=MS4wLjABAAAAYy-0OWYFTOsxucehAbX3mb7tNqburWHI191j2rJYYLhuwMM_qNur7_YLd1E5eztO&utm_source=whatsapp_business&utm_campaign=client_share&utm_medium=android&share_iid=7519519988018972434&share_link_id=d868189c-77e4-4158-977e-88b99c6072d2&share_app_id=1233&ugbiz_name=ACCOUNT&ug_btm=b8727%2Cb7360&social_share_type=5&enable_checksum=1"
-            class="social-icon"
-            target="_blank"
-            rel="noopener"
-            aria-label="TikTok"
-            ><i class="fab fa-tiktok"></i
-          ></a>
+        <div class="text-center mt-4 animate__animated animate__fadeInUp">
+          <span style="vertical-align: middle; margin-right: 8px">
+            <svg width="28" height="28" viewBox="0 0 48 48" fill="none">
+              <path
+                d="M44 6C32 8 8 24 8 40c0 0 8-2 16-8s16-18 20-26z"
+                fill="#27ae60"
+              />
+            </svg>
+          </span>
+          <p class="d-inline">
+            &copy; 2019 BMS Technologies (PVT) LTD. All rights reserved.
+          </p>
         </div>
       </div>
-    </div>
-    <div class="text-center mt-4 animate__animated animate__fadeInUp">
-      <span style="vertical-align: middle; margin-right: 8px">
-        <svg width="28" height="28" viewBox="0 0 48 48" fill="none">
-          <path
-            d="M44 6C32 8 8 24 8 40c0 0 8-2 16-8s16-18 20-26z"
-            fill="#27ae60"
-          />
-        </svg>
-      </span>
-      <p class="d-inline">
-        &copy; 2019 BMS Technologies (PVT) LTD. All rights reserved.
-      </p>
-    </div>
-  </div>
-</footer>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
