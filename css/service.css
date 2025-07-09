@@ -1,0 +1,320 @@
+.modern-card {
+  background: #fff;
+  box-shadow: 0 8px 32px rgba(39, 174, 96, 0.1);
+  border-radius: 1.5rem;
+  padding: 2.2rem 1.5rem 1.7rem 1.5rem;
+  text-align: center;
+  transition: transform 0.25s, box-shadow 0.25s;
+  position: relative;
+  overflow: hidden;
+  min-height: 320px;
+}
+.modern-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 16px 48px rgba(39, 174, 96, 0.18);
+  z-index: 2;
+}
+.icon-circle {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary) 60%, var(--accent) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem auto;
+  font-size: 2.2rem;
+  color: #fff;
+  box-shadow: 0 4px 18px rgba(39, 174, 96, 0.13);
+  transition: background 0.3s, transform 0.3s;
+}
+.modern-card:hover .icon-circle {
+  background: linear-gradient(135deg, var(--accent) 60%, var(--primary) 100%);
+  transform: scale(1.12) rotate(-6deg);
+}
+.service-desc {
+  font-size: 1.08rem;
+  color: var(--dark);
+  margin-top: 0.7rem;
+  min-height: 60px;
+  text-align: justify;
+}
+@media (max-width: 992px) {
+  .modern-card {
+    min-height: 220px;
+    padding: 1.2rem 0.7rem 1.1rem 0.7rem;
+  }
+  .icon-circle {
+    width: 48px;
+    height: 48px;
+    font-size: 1.3rem;
+  }
+}
+
+.hero-section {
+  min-height: 100vh;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background: #145a32;
+}
+.hero-bg-slider {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+.hero-bg-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  opacity: 0;
+  transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: opacity;
+  animation: heroBgZoom 12s infinite alternate;
+}
+.hero-bg-slide.active {
+  opacity: 1;
+  z-index: 1;
+  transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+@keyframes heroBgZoom {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.08);
+  }
+}
+.hero-bg-slider::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    rgba(39, 174, 96, 0.82) 0%,
+    rgba(20, 90, 50, 0.82) 100%
+  );
+  z-index: 2;
+  pointer-events: none;
+}
+.hero-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  width: 100%;
+  animation: heroContentFadeIn 1.2s;
+}
+@keyframes heroContentFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.company-name-hero {
+  font-family: "Montserrat", sans-serif;
+  font-size: 3.2rem;
+  font-weight: 900;
+  color: var(--primary);
+  background: #fff;
+  display: inline-block;
+  padding: 0.2em 1.2em;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(39, 174, 96, 0.13);
+  margin-bottom: 1.2rem;
+  letter-spacing: 2px;
+  animation: neon-glow 2.5s infinite alternate;
+}
+@keyframes neon-glow {
+  0% {
+    box-shadow: 0 0 12px #27ae60, 0 0 24px #27ae60;
+  }
+  100% {
+    box-shadow: 0 0 32px #27ae60, 0 0 64px #27ae60;
+  }
+}
+.hero-content h2 {
+  font-size: 2.2rem;
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  animation: fadeInUp 1.2s;
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.hero-content .lead {
+  font-size: 1.3rem;
+  margin-bottom: 2.2rem;
+  color: #f8f9fa;
+  font-weight: 500;
+  animation: fadeInUp 1.6s;
+}
+.btn-hero {
+  background: var(--accent);
+  color: var(--dark);
+  border: none;
+  padding: 1rem 2.7rem;
+  font-size: 1.2rem;
+  border-radius: 30px;
+  font-weight: 700;
+  box-shadow: 0 8px 32px rgba(241, 196, 15, 0.18);
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  animation: pulseBtn 2s infinite;
+}
+.btn-hero:hover {
+  background: #fff;
+  color: var(--primary);
+  transform: scale(1.07);
+}
+@keyframes pulseBtn {
+  0% {
+    box-shadow: 0 0 0 0 var(--accent);
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgba(241, 196, 15, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 var(--accent);
+  }
+}
+.btn-outline-light {
+  border: 2px solid #fff;
+  color: #fff;
+  background: transparent;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: background 0.2s, color 0.2s, border 0.2s, transform 0.2s;
+}
+.btn-outline-light:hover {
+  background: #fff;
+  color: var(--primary);
+  border-color: var(--primary);
+  transform: scale(1.06);
+}
+@media (max-width: 768px) {
+  .company-name-hero {
+    font-size: 1.5rem;
+    padding: 0.2em 0.7em;
+  }
+  .hero-content h2 {
+    font-size: 1.1rem;
+  }
+  .hero-content .lead {
+    font-size: 1rem;
+  }
+}
+
+.ac-brands-section {
+  margin: 2.5rem 0 2.5rem 0;
+}
+.ac-brands-list {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  list-style: none;
+  padding: 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  letter-spacing: 1px;
+}
+.ac-brands-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--primary);
+  background: #f8f9fa;
+  border-radius: 2em;
+  padding: 0.3em 1.2em;
+  box-shadow: 0 2px 12px #27ae601a;
+  font-family: "Montserrat", sans-serif;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+.ac-brands-list li:hover {
+  background: var(--primary);
+  color: #fff;
+  transform: scale(1.07);
+}
+.ac-brands-row {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  min-height: 100px;
+  margin-top: 1.5rem;
+}
+.brand-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(39, 174, 96, 0.1);
+  padding: 1.2rem 1.5rem 1.1rem 1.5rem;
+  min-width: 180px;
+  max-width: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  opacity: 1;
+}
+.brand-card:hover {
+  transform: scale(1.08) translateY(-8px);
+  box-shadow: 0 16px 48px rgba(39, 174, 96, 0.18);
+}
+.ac-brand-logo {
+  height: 90px;
+  width: 120px;
+  object-fit: contain;
+  border-radius: 12px;
+  background: #f8f9fa;
+  box-shadow: 0 4px 24px rgba(39, 174, 96, 0.13);
+  margin-bottom: 0.7rem;
+  transition: transform 0.4s, box-shadow 0.4s;
+}
+.brand-card:hover .ac-brand-logo {
+  transform: scale(1.12) rotate(-2deg);
+  box-shadow: 0 12px 32px rgba(39, 174, 96, 0.18);
+}
+.brand-name {
+  margin-top: 0.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  font-family: "Montserrat", sans-serif;
+}
+@media (max-width: 992px) {
+  .ac-brands-row {
+    gap: 1.2rem;
+  }
+  .brand-card {
+    min-width: 120px;
+    max-width: 140px;
+    padding: 0.7rem 0.5rem 0.7rem 0.5rem;
+  }
+  .ac-brand-logo {
+    height: 48px;
+    width: 60px;
+  }
+}

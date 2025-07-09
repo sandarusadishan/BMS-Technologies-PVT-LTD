@@ -1,0 +1,69 @@
+
+/* Modern Team Card Styles */
+#team .modern-card {
+  background: #fff;
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 32px rgba(39, 174, 96, 0.1);
+  padding: 2.2rem 1.5rem 1.7rem 1.5rem;
+  text-align: center;
+  transition: transform 0.25s, box-shadow 0.25s;
+  position: relative;
+  overflow: hidden;
+  min-height: 340px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 1;
+}
+#team .modern-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 16px 48px rgba(39, 174, 96, 0.18);
+  z-index: 2;
+}
+.team-img-wrap {
+  width: 110px;
+  height: 110px;
+  margin: 0 auto 1rem auto;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(39, 174, 96, 0.13);
+  background: linear-gradient(135deg, var(--primary) 60%, var(--accent) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s, transform 0.3s;
+}
+#team .modern-card:hover .team-img-wrap {
+  background: linear-gradient(135deg, var(--accent) 60%, var(--primary) 100%);
+  transform: scale(1.08) rotate(-6deg);
+}
+.team-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  transition: transform 0.4s;
+  animation: flipInY 1.2s;
+}
+@media (max-width: 992px) {
+  #team .modern-card {
+    min-height: 220px;
+    padding: 1.2rem 0.7rem 1.1rem 0.7rem;
+  }
+  .team-img-wrap {
+    width: 70px;
+    height: 70px;
+  }
+}
+/* Hide navbar on scroll down, show on scroll up */
+.hide-on-scroll {
+  transition: top 0.4s;
+  top: 0;
+  position: fixed !important;
+  width: 100%;
+  z-index: 999;
+}
+.hide-on-scroll.navbar-hidden {
+  top: -100px; /* Adjust if your navbar is taller */
+}
